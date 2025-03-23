@@ -1,5 +1,6 @@
+
 import React, { useState, useEffect } from 'react';
-import { Calculator, Euro, MessageSquare, Image, Mic, Clock, ArrowRight } from 'lucide-react';
+import { Calculator, Euro, MessageSquare, Image, Mic, Clock, ArrowRight, Users } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
@@ -10,11 +11,13 @@ const CostCalculator = () => {
   const defaultMessagesPerDay = 20;
   const defaultImagesPerDay = 5;
   const defaultVoiceMinutesPerDay = 15;
+  const defaultEmployees = 3;
   
   const [hourlyRate, setHourlyRate] = useState<number>(defaultHourlyRate);
   const [messagesPerDay, setMessagesPerDay] = useState<number>(defaultMessagesPerDay);
   const [imagesPerDay, setImagesPerDay] = useState<number>(defaultImagesPerDay);
   const [voiceMinutesPerDay, setVoiceMinutesPerDay] = useState<number>(defaultVoiceMinutesPerDay);
+  const [employees, setEmployees] = useState<number>(defaultEmployees);
   
   const [timeSavings, setTimeSavings] = useState<number | null>(null);
   const [moneySavings, setMoneySavings] = useState<number | null>(null);
@@ -35,8 +38,10 @@ const CostCalculator = () => {
       const N = Number(messagesPerDay);
       const B = Number(imagesPerDay);
       const M = Number(voiceMinutesPerDay);
+      const E = Number(employees);
       
-      const monthlySavingsMinutes = 22 * ((N * 1.833) + (B * 3.833) + (M * 0.667));
+      // Die Zeitersparnis multiplizieren wir mit der Anzahl der Mitarbeiter
+      const monthlySavingsMinutes = E * 22 * ((N * 1.833) + (B * 3.833) + (M * 0.667));
       
       const monthlySavingsEuro = (monthlySavingsMinutes / 60) * S;
       
@@ -52,6 +57,7 @@ const CostCalculator = () => {
     setMessagesPerDay(defaultMessagesPerDay);
     setImagesPerDay(defaultImagesPerDay);
     setVoiceMinutesPerDay(defaultVoiceMinutesPerDay);
+    setEmployees(defaultEmployees);
     setTimeSavings(null);
     setMoneySavings(null);
     setShowResults(false);
@@ -108,6 +114,35 @@ const CostCalculator = () => {
                     max={200}
                     step={1}
                     onValueChange={(value) => setHourlyRate(value[0])}
+                    className="cursor-pointer"
+                  />
+                </div>
+                
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <label htmlFor="employees" className="text-sm font-medium text-gray-700 flex items-center gap-2">
+                      <Users className="h-4 w-4 text-gray-500" />
+                      Anzahl Mitarbeiter
+                    </label>
+                    <div className="flex items-center gap-2">
+                      <Input
+                        type="number"
+                        value={employees}
+                        onChange={(e) => setEmployees(Number(e.target.value))}
+                        className="w-16 h-8 text-right"
+                        min={1}
+                        max={100}
+                      />
+                      <span className="text-sm">Mitarbeiter</span>
+                    </div>
+                  </div>
+                  <Slider
+                    id="employees"
+                    value={[employees]}
+                    min={1}
+                    max={20}
+                    step={1}
+                    onValueChange={(value) => setEmployees(value[0])}
                     className="cursor-pointer"
                   />
                 </div>
