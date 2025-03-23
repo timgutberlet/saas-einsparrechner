@@ -66,7 +66,7 @@ const CostCalculator = () => {
 
   return (
     <div className="w-full h-screen flex items-start justify-center animate-fade-in">      
-      <Card className="glass-panel rounded-2xl overflow-hidden w-full max-w-4xl">
+      <Card className="glass-panel rounded-2xl overflow-hidden w-full max-w-4xl m-2.5 shadow-xl">
         <div className="p-6 md:p-8">
           {!showResults ? (
             <div className="space-y-6 animate-fade-in">
