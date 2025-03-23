@@ -260,7 +260,7 @@ const CostCalculator = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </span>
-                    Verarbeitung von Sprachmemos: 1 Min. Sprachmemo mit Transkription in 20 Sek. verständlich
+                    Verarbeitung von Sprachmemos: 1 Min. Sprachmemo anhören vs 20 Sek. mit Transkription 
                   </li>
                 </ul>
               </div>
