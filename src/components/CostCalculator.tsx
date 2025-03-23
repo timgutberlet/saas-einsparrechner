@@ -9,7 +9,7 @@ const CostCalculator = () => {
   const defaultHourlyRate = 50;
   const defaultMessagesPerDay = 20;
   const defaultImagesPerDay = 5;
-  const defaultVoiceMinutesPerDay = 15;
+  const defaultVoiceMinutesPerDay = 7;
   
   const [hourlyRate, setHourlyRate] = useState<number>(defaultHourlyRate);
   const [messagesPerDay, setMessagesPerDay] = useState<number>(defaultMessagesPerDay);
