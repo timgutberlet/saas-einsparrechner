@@ -73,7 +73,7 @@ const CostCalculator = () => {
               <div className="space-y-6">
                 <h3 className="text-xl font-medium flex items-center gap-2 text-gray-800">
                   <Calculator className="h-5 w-5 text-brand" />
-                  Geben Sie Ihre Daten ein
+                  Geben Sie Ihre Daten ein um Ihre monatliche Ersparnis zu berechnen
                 </h3>
                 
                 <div className="space-y-4">
