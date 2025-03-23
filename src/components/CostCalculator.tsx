@@ -239,7 +239,7 @@ const CostCalculator = () => {
               
               <div className="bg-white border border-brand/20 rounded-xl p-4 md:p-6 space-y-3 md:space-y-4">
                 <h4 className="font-medium text-gray-800 text-base md:text-lg">
-                  {isMobile ? 'Rechtliche Absicherung durch InsurMagic' : 'Zusätzliche rechtliche Absicherung mithilfe von InsurMagic durch einfache Dokumentation'}
+                  {isMobile ? 'Rechtliche Absicherung durch InsurMagic' : 'Zusätzliche rechtliche Absicherung mithilfe von InsurMagic'}
                 </h4>
                 
                 <div className="prose prose-sm text-gray-600">
