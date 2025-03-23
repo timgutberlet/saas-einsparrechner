@@ -236,7 +236,7 @@ const CostCalculator = () => {
               </div>
               
               <div className="bg-white border border-brand/20 rounded-xl p-6 space-y-4">
-                <h4 className="font-medium text-gray-800 text-lg">Zusätzliche rechtliche Absicherung mithilfe von InsurMagic</h4>
+                <h4 className="font-medium text-gray-800 text-lg">Zusätzliche rechtliche Absicherung mithilfe von InsurMagic durch einfache Dokumentation</h4>
                 
                 <div className="prose prose-sm text-gray-600">
                   <p>
@@ -248,14 +248,11 @@ const CostCalculator = () => {
                 <div className="bg-red-50 border border-red-100 rounded-lg p-4 mt-4">
                   <h5 className="font-medium text-red-800 mb-2">Fallbeispiel: LG Halle (Saale), Urteil v. 31.03.2023, Az: 5 O 414/21</h5>
                   <p className="text-sm text-red-700 mb-4">
-                    Ein Versicherungsmakler wurde zu einer Schadensersatzzahlung von 101.000€ verurteilt, 
-                    weil er die Beratung zur Gebäudeversicherung nicht ausreichend dokumentiert hatte. 
-                    Der Makler konnte im Prozess nicht nachweisen, dass er den Kunden über den tatsächlichen Zeitwert 
-                    des Gebäudes und die Risiken einer Unterversicherung aufgeklärt hatte. 
-                    Das Gericht sah eine Verletzung der Dokumentationspflicht nach §§ 61, 63 VVG, da weder die 
-                    Empfehlung zum tatsächlichen Versicherungswert noch die Aufklärung über die Unterversicherung 
-                    im Beratungsprotokoll dokumentiert wurden. Die fehlende / unvollständige Dokumentation führte 
-                    zu einer Verurteilung. 
+                  Ein Versicherungsmakler wurde zu 101.000 € Schadensersatz verurteilt,
+                  weil er die Beratung zur Gebäudeversicherung unzureichend dokumentiert hatte.
+                  Das Gericht sah darin eine Verletzung der Dokumentationspflicht nach §§ 61, 63 VVG,
+                  da weder eine Empfehlung zum Versicherungswert noch ein Hinweis auf Unterversicherung
+                  dokumentiert wurden.
                   </p>
                   <a 
                     href="https://kanzlei-schlegelmilch.de/2023/09/25/beratungspflicht-des-versicherungsvermittlers/" 
