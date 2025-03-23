@@ -244,7 +244,7 @@ const CostCalculator = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </span>
-                    Archivierung von Textnachrichten: 2 Min. ohne Software vs. 10 Sek. mit Software
+                    Archivierung von Textnachrichten: 2 Min. ohne InsurMagic vs. 10 Sek. mit InsurMagic
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="bg-brand rounded-full p-1 mt-0.5">
@@ -252,7 +252,7 @@ const CostCalculator = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </span>
-                    Archivierung von Bildern/Dokumenten: 4 Min. ohne Software vs. 10 Sek. mit Software
+                    Archivierung von Bildern/Dokumenten: 4 Min. ohne InsurMagic vs. 10 Sek. mit InsurMagic
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="bg-brand rounded-full p-1 mt-0.5">
