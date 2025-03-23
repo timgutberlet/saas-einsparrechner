@@ -1,14 +1,20 @@
-
 import React, { useState, useEffect } from 'react';
 import { Calculator, Euro, MessageSquare, Image, Mic, Clock, ArrowRight } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Slider } from '@/components/ui/slider';
+import { Input } from '@/components/ui/input';
 
 const CostCalculator = () => {
-  const [hourlyRate, setHourlyRate] = useState<number | string>('');
-  const [messagesPerDay, setMessagesPerDay] = useState<number | string>('');
-  const [imagesPerDay, setImagesPerDay] = useState<number | string>('');
-  const [voiceMinutesPerDay, setVoiceMinutesPerDay] = useState<number | string>('');
+  const defaultHourlyRate = 50;
+  const defaultMessagesPerDay = 20;
+  const defaultImagesPerDay = 5;
+  const defaultVoiceMinutesPerDay = 15;
+  
+  const [hourlyRate, setHourlyRate] = useState<number>(defaultHourlyRate);
+  const [messagesPerDay, setMessagesPerDay] = useState<number>(defaultMessagesPerDay);
+  const [imagesPerDay, setImagesPerDay] = useState<number>(defaultImagesPerDay);
+  const [voiceMinutesPerDay, setVoiceMinutesPerDay] = useState<number>(defaultVoiceMinutesPerDay);
   
   const [timeSavings, setTimeSavings] = useState<number | null>(null);
   const [moneySavings, setMoneySavings] = useState<number | null>(null);
@@ -16,13 +22,7 @@ const CostCalculator = () => {
   const [isCalculating, setIsCalculating] = useState<boolean>(false);
   
   const validateInputs = (): boolean => {
-    return (
-      hourlyRate !== '' && 
-      messagesPerDay !== '' && 
-      imagesPerDay !== '' && 
-      voiceMinutesPerDay !== '' &&
-      Number(hourlyRate) > 0
-    );
+    return hourlyRate > 0;
   };
 
   const calculateSavings = () => {
@@ -30,18 +30,14 @@ const CostCalculator = () => {
     
     setIsCalculating(true);
     
-    // Simulate calculation delay for better UX
     setTimeout(() => {
       const S = Number(hourlyRate);
       const N = Number(messagesPerDay);
       const B = Number(imagesPerDay);
       const M = Number(voiceMinutesPerDay);
       
-      // 22 working days per month
-      // Formula for monthly time savings in minutes
       const monthlySavingsMinutes = 22 * ((N * 1.833) + (B * 3.833) + (M * 0.667));
       
-      // Formula for monetary savings: (Time savings in hours) * Hourly rate
       const monthlySavingsEuro = (monthlySavingsMinutes / 60) * S;
       
       setTimeSavings(Math.round(monthlySavingsMinutes * 10) / 10);
@@ -52,10 +48,10 @@ const CostCalculator = () => {
   };
 
   const resetCalculator = () => {
-    setHourlyRate('');
-    setMessagesPerDay('');
-    setImagesPerDay('');
-    setVoiceMinutesPerDay('');
+    setHourlyRate(defaultHourlyRate);
+    setMessagesPerDay(defaultMessagesPerDay);
+    setImagesPerDay(defaultImagesPerDay);
+    setVoiceMinutesPerDay(defaultVoiceMinutesPerDay);
     setTimeSavings(null);
     setMoneySavings(null);
     setShowResults(false);
@@ -81,75 +77,126 @@ const CostCalculator = () => {
         <div className="p-6 md:p-8">
           {!showResults ? (
             <div className="space-y-6 animate-fade-in">
-              <div className="space-y-4">
+              <div className="space-y-6">
                 <h3 className="text-xl font-medium flex items-center gap-2 text-gray-800">
                   <Calculator className="h-5 w-5 text-brand" />
                   Geben Sie Ihre Daten ein
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
+                
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
                     <label htmlFor="hourlyRate" className="text-sm font-medium text-gray-700 flex items-center gap-2">
                       <Euro className="h-4 w-4 text-gray-500" />
                       Stundenlohn (€)
                     </label>
-                    <input
-                      id="hourlyRate"
-                      type="number"
-                      min="0"
-                      value={hourlyRate}
-                      onChange={(e) => setHourlyRate(e.target.value)}
-                      className="input-field"
-                      placeholder="z.B. 50"
-                    />
+                    <div className="flex items-center gap-2">
+                      <Input
+                        type="number"
+                        value={hourlyRate}
+                        onChange={(e) => setHourlyRate(Number(e.target.value))}
+                        className="w-16 h-8 text-right"
+                        min={0}
+                        max={500}
+                      />
+                      <span className="text-sm">€</span>
+                    </div>
                   </div>
-                  
-                  <div className="space-y-2">
+                  <Slider
+                    id="hourlyRate"
+                    value={[hourlyRate]}
+                    min={0}
+                    max={200}
+                    step={1}
+                    onValueChange={(value) => setHourlyRate(value[0])}
+                    className="cursor-pointer"
+                  />
+                </div>
+                
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
                     <label htmlFor="messagesPerDay" className="text-sm font-medium text-gray-700 flex items-center gap-2">
                       <MessageSquare className="h-4 w-4 text-gray-500" />
                       WhatsApp Nachrichten pro Tag
                     </label>
-                    <input
-                      id="messagesPerDay"
-                      type="number"
-                      min="0"
-                      value={messagesPerDay}
-                      onChange={(e) => setMessagesPerDay(e.target.value)}
-                      className="input-field"
-                      placeholder="z.B. 20"
-                    />
+                    <div className="flex items-center gap-2">
+                      <Input
+                        type="number"
+                        value={messagesPerDay}
+                        onChange={(e) => setMessagesPerDay(Number(e.target.value))}
+                        className="w-16 h-8 text-right"
+                        min={0}
+                        max={500}
+                      />
+                      <span className="text-sm">Nachrichten</span>
+                    </div>
                   </div>
-                  
-                  <div className="space-y-2">
+                  <Slider
+                    id="messagesPerDay"
+                    value={[messagesPerDay]}
+                    min={0}
+                    max={100}
+                    step={1}
+                    onValueChange={(value) => setMessagesPerDay(value[0])}
+                    className="cursor-pointer"
+                  />
+                </div>
+                
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
                     <label htmlFor="imagesPerDay" className="text-sm font-medium text-gray-700 flex items-center gap-2">
                       <Image className="h-4 w-4 text-gray-500" />
                       Bilder/Dokumente pro Tag
                     </label>
-                    <input
-                      id="imagesPerDay"
-                      type="number"
-                      min="0"
-                      value={imagesPerDay}
-                      onChange={(e) => setImagesPerDay(e.target.value)}
-                      className="input-field"
-                      placeholder="z.B. 5"
-                    />
+                    <div className="flex items-center gap-2">
+                      <Input
+                        type="number"
+                        value={imagesPerDay}
+                        onChange={(e) => setImagesPerDay(Number(e.target.value))}
+                        className="w-16 h-8 text-right"
+                        min={0}
+                        max={500}
+                      />
+                      <span className="text-sm">Bilder</span>
+                    </div>
                   </div>
-                  
-                  <div className="space-y-2">
+                  <Slider
+                    id="imagesPerDay"
+                    value={[imagesPerDay]}
+                    min={0}
+                    max={50}
+                    step={1}
+                    onValueChange={(value) => setImagesPerDay(value[0])}
+                    className="cursor-pointer"
+                  />
+                </div>
+                
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
                     <label htmlFor="voiceMinutesPerDay" className="text-sm font-medium text-gray-700 flex items-center gap-2">
                       <Mic className="h-4 w-4 text-gray-500" />
                       Sprachmemos (Minuten pro Tag)
                     </label>
-                    <input
-                      id="voiceMinutesPerDay"
-                      type="number"
-                      min="0"
-                      value={voiceMinutesPerDay}
-                      onChange={(e) => setVoiceMinutesPerDay(e.target.value)}
-                      className="input-field"
-                      placeholder="z.B. 15"
-                    />
+                    <div className="flex items-center gap-2">
+                      <Input
+                        type="number"
+                        value={voiceMinutesPerDay}
+                        onChange={(e) => setVoiceMinutesPerDay(Number(e.target.value))}
+                        className="w-16 h-8 text-right"
+                        min={0}
+                        max={500}
+                      />
+                      <span className="text-sm">Minuten</span>
+                    </div>
                   </div>
+                  <Slider
+                    id="voiceMinutesPerDay"
+                    value={[voiceMinutesPerDay]}
+                    min={0}
+                    max={60}
+                    step={1}
+                    onValueChange={(value) => setVoiceMinutesPerDay(value[0])}
+                    className="cursor-pointer"
+                  />
                 </div>
               </div>
               
