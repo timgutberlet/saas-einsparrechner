@@ -40,8 +40,8 @@ const CostCalculator = () => {
       
       const monthlySavingsEuro = (monthlySavingsMinutes / 60) * S;
       
-      setTimeSavings(Math.round(monthlySavingsMinutes * 10) / 10);
-      setMoneySavings(Math.round(monthlySavingsEuro * 100) / 100);
+      setTimeSavings(Math.round(monthlySavingsMinutes));
+      setMoneySavings(Math.round(monthlySavingsEuro));
       setShowResults(true);
       setIsCalculating(false);
     }, 800);
