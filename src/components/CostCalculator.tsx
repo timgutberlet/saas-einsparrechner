@@ -79,7 +79,7 @@ const CostCalculator = () => {
                 </h3>
                 
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0">
                     <label htmlFor="hourlyRate" className="text-sm font-medium text-gray-700 flex items-center gap-2">
                       <Euro className="h-4 w-4 text-gray-500" />
                       Stundenlohn (€)
@@ -89,7 +89,7 @@ const CostCalculator = () => {
                         type="number"
                         value={hourlyRate}
                         onChange={(e) => setHourlyRate(Number(e.target.value))}
-                        className="w-16 h-8 text-right text-sm md:text-base"
+                        className="w-20 h-8 text-right text-sm md:text-base"
                         min={0}
                         max={500}
                       />
@@ -108,7 +108,7 @@ const CostCalculator = () => {
                 </div>
                 
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0">
                     <label htmlFor="messagesPerDay" className="text-sm font-medium text-gray-700 flex items-center gap-2">
                       <MessageSquare className="h-4 w-4 text-gray-500" />
                       WhatsApp Nachrichten pro Tag
@@ -118,7 +118,7 @@ const CostCalculator = () => {
                         type="number"
                         value={messagesPerDay}
                         onChange={(e) => setMessagesPerDay(Number(e.target.value))}
-                        className="w-16 h-8 text-right text-sm md:text-base"
+                        className="w-20 h-8 text-right text-sm md:text-base"
                         min={0}
                         max={500}
                       />
@@ -137,7 +137,7 @@ const CostCalculator = () => {
                 </div>
                 
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0">
                     <label htmlFor="imagesPerDay" className="text-sm font-medium text-gray-700 flex items-center gap-2">
                       <Image className="h-4 w-4 text-gray-500" />
                       Bilder/Dokumente pro Tag
@@ -147,7 +147,7 @@ const CostCalculator = () => {
                         type="number"
                         value={imagesPerDay}
                         onChange={(e) => setImagesPerDay(Number(e.target.value))}
-                        className="w-16 h-8 text-right text-sm md:text-base"
+                        className="w-20 h-8 text-right text-sm md:text-base"
                         min={0}
                         max={500}
                       />
@@ -166,7 +166,7 @@ const CostCalculator = () => {
                 </div>
                 
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0">
                     <label htmlFor="voiceMinutesPerDay" className="text-sm font-medium text-gray-700 flex items-center gap-2">
                       <Mic className="h-4 w-4 text-gray-500" />
                       Sprachmemos (Minuten pro Tag)
@@ -176,7 +176,7 @@ const CostCalculator = () => {
                         type="number"
                         value={voiceMinutesPerDay}
                         onChange={(e) => setVoiceMinutesPerDay(Number(e.target.value))}
-                        className="w-16 h-8 text-right text-sm md:text-base"
+                        className="w-20 h-8 text-right text-sm md:text-base"
                         min={0}
                         max={500}
                       />
