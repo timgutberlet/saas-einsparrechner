@@ -236,11 +236,11 @@ const CostCalculator = () => {
               </div>
               
               <div className="bg-white border border-brand/20 rounded-xl p-6 space-y-4">
-                <h4 className="font-medium text-gray-800 text-lg">Rechtliche Absicherung mithilfe vonInsurMagic</h4>
+                <h4 className="font-medium text-gray-800 text-lg">Zusätzliche rechtliche Absicherung mithilfe von InsurMagic</h4>
                 
                 <div className="prose prose-sm text-gray-600">
                   <p>
-                    Die 1-Klick Archivierungsfunktion von InsurMagic hilft Ihnen sich vor kostspieligen Rechtsstreitigkeiten zu schützen. 
+                    Die 1-Klick Archivierungsfunktion von InsurMagic hilft Ihnen sich vor kostspieligen Rechtsstreitigkeiten durch Ordnungsgemäße Dokumentation zu schützen. 
                     Eine Fehlende oder unvollständige Dokumentation kann zu Schadensersatzforderungen von bis zu 250.000€ führen.
                   </p>
                 </div>
