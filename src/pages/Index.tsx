@@ -3,7 +3,7 @@ import CostCalculator from '@/components/CostCalculator';
 
 const Index = () => {
   return (
-    <div className="w-full h-full bg-white">
+    <div className="h-screen bg-white">
       <CostCalculator />
     </div>
   );
