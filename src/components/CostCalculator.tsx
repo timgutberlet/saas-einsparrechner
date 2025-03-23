@@ -219,7 +219,7 @@ const CostCalculator = () => {
                     <div className="flex flex-col items-center">
                       <Clock className="h-6 w-6 md:h-8 md:w-8 text-brand mb-2" />
                       <p className="text-xs md:text-sm text-gray-500 mb-1">Zeitersparnis pro Monat</p>
-                      <div className="calculation-result text-lg md:text-lg font-medium">
+                      <div className="calculation-result text-2xl md:text-3xl font-semibold">
                         {timeSavings} Minuten
                       </div>
                     </div>
@@ -229,7 +229,7 @@ const CostCalculator = () => {
                     <div className="flex flex-col items-center">
                       <Euro className="h-6 w-6 md:h-8 md:w-8 text-brand mb-2" />
                       <p className="text-xs md:text-sm text-gray-500 mb-1">Kostenersparnis pro Monat</p>
-                      <div className="calculation-result text-lg md:text-lg font-medium">
+                      <div className="calculation-result text-2xl md:text-3xl font-semibold">
                         {moneySavings} €
                       </div>
                     </div>
