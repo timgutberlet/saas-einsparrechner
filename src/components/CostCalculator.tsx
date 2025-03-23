@@ -149,7 +149,7 @@ const CostCalculator = () => {
                         min={0}
                         max={500}
                       />
-                      <span className="text-sm">Bilder</span>
+                      <span className="text-sm">Bilder/Dokumente</span>
                     </div>
                   </div>
                   <Slider
