@@ -65,14 +65,7 @@ const CostCalculator = () => {
   }, [showResults]);
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-4 md:p-8 space-y-8 animate-fade-in">
-      <div className="text-center space-y-4">
-        <h2 className="text-3xl md:text-4xl font-semibold text-gray-900">Kostenrechner</h2>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Berechnen Sie Ihre monatliche Zeit- und Kostenersparnis mit unserer Software.
-        </p>
-      </div>
-      
+    <div className="w-full max-w-4xl mx-auto p-4 md:p-8 space-y-8 animate-fade-in">      
       <Card className="glass-panel rounded-2xl overflow-hidden">
         <div className="p-6 md:p-8">
           {!showResults ? (
