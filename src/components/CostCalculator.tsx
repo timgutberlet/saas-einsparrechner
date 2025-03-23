@@ -212,7 +212,7 @@ const CostCalculator = () => {
           ) : (
             <div id="results-section" className="space-y-6 md:space-y-8 animate-fade-up">
               <div className="text-center">
-                <h3 className="text-lg md:text-xl font-medium text-gray-800 mb-4 md:mb-6">Ihre monatliche Ersparnis</h3>
+                <h3 className="text-lg md:text-xl font-medium text-gray-800 mb-4 md:mb-6">Ihre monatliche Ersparnis mit InsurMagic</h3>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                   <div className="bg-gray-50 rounded-xl p-4 md:p-6 border border-gray-100 shadow-sm">
@@ -235,6 +235,15 @@ const CostCalculator = () => {
                     </div>
                   </div>
                 </div>
+              </div>
+              
+              <div className="flex justify-center mb-6">
+                <Button 
+                  onClick={resetCalculator}
+                  className="bg-gray-100 hover:bg-gray-200 text-gray-800 px-6 md:px-8 py-3 md:py-4 rounded-xl font-medium transition-all duration-300 text-sm md:text-base"
+                >
+                  Neue Berechnung
+                </Button>
               </div>
               
               <div className="bg-white border border-brand/20 rounded-xl p-4 md:p-6 space-y-3 md:space-y-4">
@@ -300,15 +309,6 @@ const CostCalculator = () => {
                     Verarbeitung von Sprachmemos: 1 Min. Sprachmemo anhören vs 20 Sek. mit Transkription 
                   </li>
                 </ul>
-              </div>
-              
-              <div className="flex justify-center pt-4">
-                <Button 
-                  onClick={resetCalculator}
-                  className="bg-gray-100 hover:bg-gray-200 text-gray-800 px-6 md:px-8 py-3 md:py-4 rounded-xl font-medium transition-all duration-300 text-sm md:text-base"
-                >
-                  Neue Berechnung
-                </Button>
               </div>
             </div>
           )}
