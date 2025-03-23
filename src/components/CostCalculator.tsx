@@ -235,6 +235,42 @@ const CostCalculator = () => {
                 </div>
               </div>
               
+              <div className="bg-white border border-brand/20 rounded-xl p-6 space-y-4">
+                <h4 className="font-medium text-gray-800 text-lg">Rechtliche Absicherung mithilfe vonInsurMagic</h4>
+                
+                <div className="prose prose-sm text-gray-600">
+                  <p>
+                    Die 1-Klick Archivierungsfunktion von InsurMagic hilft Ihnen sich vor kostspieligen Rechtsstreitigkeiten zu schützen. 
+                    Eine Fehlende oder unvollständige Dokumentation kann zu Schadensersatzforderungen von bis zu 250.000€ führen.
+                  </p>
+                </div>
+
+                <div className="bg-red-50 border border-red-100 rounded-lg p-4 mt-4">
+                  <h5 className="font-medium text-red-800 mb-2">Fallbeispiel: LG Halle (Saale), Urteil v. 31.03.2023, Az: 5 O 414/21</h5>
+                  <p className="text-sm text-red-700 mb-4">
+                    Ein Versicherungsmakler wurde zu einer Schadensersatzzahlung von 101.000€ verurteilt, 
+                    weil er die Beratung zur Gebäudeversicherung nicht ausreichend dokumentiert hatte. 
+                    Der Makler konnte im Prozess nicht nachweisen, dass er den Kunden über den tatsächlichen Zeitwert 
+                    des Gebäudes und die Risiken einer Unterversicherung aufgeklärt hatte. 
+                    Das Gericht sah eine Verletzung der Dokumentationspflicht nach §§ 61, 63 VVG, da weder die 
+                    Empfehlung zum tatsächlichen Versicherungswert noch die Aufklärung über die Unterversicherung 
+                    im Beratungsprotokoll dokumentiert wurden. Die fehlende / unvollständige Dokumentation führte 
+                    zu einer Verurteilung. 
+                  </p>
+                  <a 
+                    href="https://kanzlei-schlegelmilch.de/2023/09/25/beratungspflicht-des-versicherungsvermittlers/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="inline-flex items-center px-4 py-2 bg-red-100 text-red-800 rounded-lg hover:bg-red-200 transition-colors text-sm font-medium"
+                  >
+                    Zum vollständigen Urteil
+                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+
               <div className="bg-brand/5 rounded-xl p-6">
                 <h4 className="font-medium text-gray-700 mb-3">Annahmen zur Berechnung:</h4>
                 <ul className="space-y-2 text-sm text-gray-600">
