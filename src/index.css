@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -102,6 +101,9 @@
 @layer components {
   .glass-panel {
     @apply bg-white/90 backdrop-blur-sm border border-white/20 shadow-lg;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000;
   }
 
   .input-field {
@@ -110,20 +112,31 @@
 
   .calculation-result {
     @apply text-3xl font-semibold text-brand tracking-tight;
+    transform: translateZ(0);
   }
 
   .slide-up {
-    animation: slideUp 0.5s ease forwards;
+    animation: slideUp 0.3s ease forwards;
+    transform: translateZ(0);
+    will-change: transform, opacity;
   }
 
   @keyframes slideUp {
     0% {
-      transform: translateY(20px);
+      transform: translate3d(0, 20px, 0);
       opacity: 0;
     }
     100% {
-      transform: translateY(0);
+      transform: translate3d(0, 0, 0);
       opacity: 1;
     }
+  }
+
+  /* Add hardware acceleration hints */
+  .hardware-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000;
+    will-change: transform;
   }
 }
